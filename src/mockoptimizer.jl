@@ -785,7 +785,7 @@ function hasprimalray(instance::MockLinQuadOptimizer)
     return !isempty(instance.inner.ray_primal_solution)
 end
 
-MOI.free!(m::MockLinQuadOptimizer) = nothing
+Base.finalize!(m::MockLinQuadOptimizer) = nothing
 
 #=
 LQOI.get_objective_bound(instance::MockLinQuadOptimizer) = get_objval(instance.inner)
